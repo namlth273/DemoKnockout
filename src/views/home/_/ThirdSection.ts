@@ -1,15 +1,15 @@
 import { IBaseViewModel, IBaseParam } from "../../../models/models";
 import { EnumFormId } from "../../../utils";
 
-class SecondSectionViewModel implements IBaseViewModel {
-    formIndex: number = 2;
-    formId: EnumFormId = EnumFormId.Step2;
+class ThirdSectionViewModel implements IBaseViewModel {
+    formIndex: number = 3;
+    formId: EnumFormId = EnumFormId.Step3;
     params: KnockoutObservable<IBaseParam> = ko.observable({} as IBaseParam);
     isComponentVisible: KnockoutComputed<boolean> = ko.computed(() => { return false; });
     isFormReadOnly: KnockoutComputed<boolean> = ko.computed(() => { return false; });
-    lastName: KnockoutObservable<string> = ko.observable("");
+    totalAmount: KnockoutObservable<number | null> = ko.observable(null);
 
-    constructor(params?: ISecondSectionParam) {
+    constructor(params?: IThirdSectionParam) {
         if (params && params.params()) {
             this.params = params.params;
 
@@ -27,13 +27,14 @@ class SecondSectionViewModel implements IBaseViewModel {
             });
 
             this.isComponentVisible = ko.computed(() => {
+                console.log(this.params().formIndex() == this.formIndex || !this.isFormReadOnly());
                 return !this.params().isMobile() || (this.params().isMobile() && (this.params().formIndex() == this.formIndex || !this.isFormReadOnly()));
             });
         }
     }
 
     mapParam() {
-        this.lastName(this.params().requestModel().lastName());
+        this.totalAmount(this.params().requestModel().totalAmount());
     }
 
     edit() {
@@ -41,22 +42,22 @@ class SecondSectionViewModel implements IBaseViewModel {
     }
 
     next() {
-        this.params().requestModel().lastName(this.lastName());
-        this.params().activeFormId(EnumFormId.Step3);
+        this.params().requestModel().totalAmount(this.totalAmount());
+        this.params().activeFormId(EnumFormId.None);
         if (this.params().formIndex() == this.formIndex)
             this.params().formIndex(this.params().formIndex() + 1);
     }
 }
 
-export class SecondSectionComponent {
+export class ThirdSectionComponent {
     constructor() {
         return {
-            viewModel: SecondSectionViewModel,
-            template: require("html-loader!./SecondSection.html")
+            viewModel: ThirdSectionViewModel,
+            template: require("html-loader!./ThirdSection.html")
         };
     }
 }
 
-interface ISecondSectionParam {
+interface IThirdSectionParam {
     params: KnockoutObservable<IBaseParam>;
 }

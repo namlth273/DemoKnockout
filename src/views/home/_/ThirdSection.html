@@ -1,0 +1,33 @@
+<div class="card mt-3" data-bind="visible: isComponentVisible">
+    <div class="card-body">
+        <div class="row" data-bind="if: !isFormReadOnly()">
+            <div class="col-12">
+                <h4>Third Section</h4>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label class="form-text">Total Amount</label>
+                    <input type="text" class="form-control" data-bind="value: totalAmount" />
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="btn-group">
+                    <button class="btn btn-primary" type="button" data-bind="click: next">Send Request</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" data-bind="if: isFormReadOnly">
+            <div class="col-12">
+                <i class="fa fa-edit btn-edit" data-bind="click: edit"></i>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label class="form-text"><strong>Last Name:</strong> <span
+                            data-bind="text: params().requestModel().totalAmount"></span></label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -4,7 +4,7 @@
             <h3>Home</h3>
             <h4>activeFormId = <span data-bind="text: params().activeFormId"></span></h4>
             <h4>formIndex = <span data-bind="text: params().formIndex"></span></h4>
-            <h4 data-bind="text: params().isMobile"></h4>
+            <h4>isMobile = <span data-bind="text: params().isMobile"></span></h4>
         </div>
         <div class="col-12">
             <div class="btn-group">
@@ -20,21 +20,25 @@
             </div>
         </div>
         <div class="col-12">
-            <div class="card my-3">
+            <div class="card mt-3">
                 <div class="card-body">
                     <p data-bind="text: 'Name: ' + params().requestModel().name()"></p>
                     <p data-bind="text: 'First Name: ' + params().requestModel().firstName()"></p>
                     <p data-bind="text: 'Last Name: ' + params().requestModel().lastName()"></p>
+                    <p data-bind="text: 'Total Amount: ' + params().requestModel().totalAmount()"></p>
                 </div>
             </div>
         </div>
         <div class="col-12">
             <!--ko if: !isFormClearing()-->
-            <!--ko if: params().formIndex() >= 0-->
+            <!--ko if: params().formIndex() >= 1-->
             <top-section params="params: params"></top-section>
             <!--/ko-->
-            <!--ko if: params().formIndex() >= 1-->
+            <!--ko if: params().formIndex() >= 2-->
             <second-section params="params: params"></second-section>
+            <!--/ko-->
+            <!--ko if: params().formIndex() >= 3-->
+            <third-section params="params: params"></third-section>
             <!--/ko-->
             <!--/ko-->
         </div>

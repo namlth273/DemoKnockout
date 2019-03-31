@@ -21,4 +21,5 @@ export interface IRequestModel {
     name: KnockoutObservable<string>;
     firstName: KnockoutObservable<string>;
     lastName: KnockoutObservable<string>;
+    totalAmount: KnockoutObservable<number | null>;
 }

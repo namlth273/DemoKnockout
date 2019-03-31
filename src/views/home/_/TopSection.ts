@@ -2,7 +2,7 @@ import { IBaseViewModel, IBaseParam } from "../../../models/models";
 import { EnumFormId } from "../../../utils";
 
 class TopSectionViewModel implements IBaseViewModel {
-    formIndex: number = 0;
+    formIndex: number = 1;
     formId: EnumFormId = EnumFormId.Step1;
     params: KnockoutObservable<IBaseParam> = ko.observable({} as IBaseParam);
     isComponentVisible: KnockoutComputed<boolean> = ko.computed(() => { return false; });
