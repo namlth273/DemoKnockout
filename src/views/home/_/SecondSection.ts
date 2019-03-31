@@ -27,7 +27,7 @@ class SecondSectionViewModel implements IBaseViewModel {
             });
 
             this.isComponentVisible = ko.computed(() => {
-                return !this.params().isMobile() || (this.params().isMobile() && (this.params().formIndex() == this.formIndex || !this.isFormReadOnly()));
+                return !this.params().isMobile() || (this.params().isMobile() && (this.params().activeFormId() == this.formId));
             });
         }
     }
