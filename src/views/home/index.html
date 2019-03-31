@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 mt-3">
+            <h3>Home</h3>
+            <h4>activeFormId = <span data-bind="text: params().activeFormId"></span></h4>
+            <h4>formIndex = <span data-bind="text: params().formIndex"></span></h4>
+            <h4 data-bind="text: params().isMobile"></h4>
+        </div>
+        <div class="col-12">
+            <div class="btn-group">
+                <button class="btn btn-info" type="button" data-bind="click: setDefault">Set Default</button>
+                <button class="btn btn-secondary" type="button" data-bind="click: editMode">Edit Mode <span data-bind="text: params().isInEditMode() ? 'On' : 'Off'"></span></button>
+                <button class="btn btn-danger" type="button" data-bind="click: clearForm">
+                    Clear Form
+                    <!--ko if: isFormClearing-->
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <!--/ko-->                    
+                </button>
+                <button class="btn btn-primary" type="button" data-bind="click: next">Next <span data-bind="text: params().activeFormId"></span></button>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card my-3">
+                <div class="card-body">
+                    <p data-bind="text: 'Name: ' + params().requestModel().name()"></p>
+                    <p data-bind="text: 'First Name: ' + params().requestModel().firstName()"></p>
+                    <p data-bind="text: 'Last Name: ' + params().requestModel().lastName()"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <!--ko if: !isFormClearing()-->
+            <!--ko if: params().formIndex() >= 0-->
+            <top-section params="params: params"></top-section>
+            <!--/ko-->
+            <!--ko if: params().formIndex() >= 1-->
+            <second-section params="params: params"></second-section>
+            <!--/ko-->
+            <!--/ko-->
+        </div>
+    </div>
+</div>
