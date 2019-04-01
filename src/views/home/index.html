@@ -1,4 +1,4 @@
-<div class="container">
+<div data-bind="css: { 'container-fluid': params().isMobile(), 'container': !params().isMobile() }">
     <div class="row">
         <div class="col-12 mt-3">
             <h3>Home</h3>
@@ -9,16 +9,23 @@
         <div class="col-12">
             <div class="btn-group">
                 <button class="btn btn-info" type="button" data-bind="click: setDefault">Set Default</button>
-                <button class="btn btn-secondary" type="button" data-bind="click: editMode">Edit Mode <span data-bind="text: params().isInEditMode() ? 'On' : 'Off'"></span></button>
+                <button class="btn btn-secondary" type="button" data-bind="click: editMode">Edit Mode <span
+                        data-bind="text: params().isInEditMode() ? 'On' : 'Off'"></span></button>
                 <button class="btn btn-danger" type="button" data-bind="click: clearForm">
                     Clear Form
                     <!--ko if: isFormClearing-->
                     <i class="fas fa-spinner fa-spin"></i>
-                    <!--/ko-->                    
+                    <!--/ko-->
                 </button>
-                <button class="btn btn-primary" type="button" data-bind="click: next">Next <span data-bind="text: params().activeFormId"></span></button>
+                <button class="btn btn-primary" type="button" data-bind="click: next">Next <span
+                        data-bind="text: params().activeFormId"></span></button>
             </div>
         </div>
+        <!--ko if: params().isMobile-->
+        <div class="col-12 mt-3">
+            <navigation-menu params="params: params"></navigation-menu>
+        </div>
+        <!--/ko-->
         <div class="col-12">
             <div class="card mt-3">
                 <div class="card-body">
