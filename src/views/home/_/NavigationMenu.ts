@@ -1,5 +1,4 @@
-import { IBaseViewModel, IBaseParam } from "../../../models/models";
-import { EnumFormId } from "../../../utils";
+import { IBaseViewModel, IBaseParam } from "@/models/models";
 
 class NavigationMenuViewModel implements IBaseViewModel {
     pageIndex: KnockoutObservable<number> = ko.observable(0);

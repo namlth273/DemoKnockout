@@ -1,5 +1,5 @@
-import { IBaseViewModel, IBaseParam } from "../../../models/models";
-import { EnumFormId } from "../../../utils";
+import { IBaseViewModel, IBaseParam } from "@/models/models";
+import { EnumFormId } from "@/utils";
 
 class ThirdSectionViewModel implements IBaseViewModel {
     formIndex: number = 3;

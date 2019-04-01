@@ -1,6 +1,6 @@
-import "./styles/main.scss";
+import "@/styles/main.scss";
 import "babel-polyfill";
-import { HomeComponent } from "./views/home";
+import { HomeComponent } from "@/views/home";
 
 class MainViewModel {
     windowWidth: KnockoutObservable<number> = ko.observable(window.innerWidth);

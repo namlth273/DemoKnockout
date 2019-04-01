@@ -2,8 +2,8 @@ import { TopSectionComponent } from "./_/TopSection";
 import { SecondSectionComponent } from "./_/SecondSection";
 import { ThirdSectionComponent } from "./_/ThirdSection";
 import { NavigationMenuComponent } from "./_/NavigationMenu";
-import { IRequestModel, IBaseParam } from "../../models/models";
-import { EnumFormId } from "../../utils";
+import { IRequestModel, IBaseParam } from "@/models/models";
+import { EnumFormId } from "@/utils";
 
 class HomeViewModel {
     name: KnockoutObservable<string> = ko.observable(new Date().toTimeString());

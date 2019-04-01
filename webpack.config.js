@@ -80,7 +80,10 @@ module.exports = env => {
       ]
     },
     resolve: {
-      extensions: ['.tsx', '.ts', '.js']
+      extensions: ['.tsx', '.ts', '.js'],
+      alias: {
+        "@": path.resolve(__dirname, 'src'),
+    }
     },
     plugins: [
       new CleanWebpackPlugin(),
