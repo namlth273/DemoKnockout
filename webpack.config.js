@@ -82,7 +82,7 @@ module.exports = env => {
     resolve: {
       extensions: ['.tsx', '.ts', '.js'],
       alias: {
-        "@": path.resolve(__dirname, 'src'),
+        '@': path.resolve(__dirname, 'src'),
     }
     },
     plugins: [

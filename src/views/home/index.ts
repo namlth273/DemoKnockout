@@ -48,7 +48,7 @@ class HomeViewModel {
                 name: ko.observable(""),
                 firstName: ko.observable(""),
                 lastName: ko.observable(""),
-                totalAmount: ko.observable(20.20)
+                totalAmount: ko.observable(null)
             } as IRequestModel);
             this.params().formIndex(0);
             this.params().isInEditMode(false);
