@@ -1,6 +1,7 @@
 import { TopSectionComponent } from "./_/TopSection";
 import { SecondSectionComponent } from "./_/SecondSection";
 import { ThirdSectionComponent } from "./_/ThirdSection";
+import { ScopeOfWorkComponent } from "./_/ScopeOfWork";
 import { NavigationMenuComponent } from "./_/NavigationMenu";
 import { IRequestModel, IBaseParam } from "@/models/models";
 import { EnumFormId } from "@/utils";
@@ -48,7 +49,7 @@ class HomeViewModel {
                 name: ko.observable(""),
                 firstName: ko.observable(""),
                 lastName: ko.observable(""),
-                totalAmount: ko.observable(null)
+                totalAmount: ko.observable(0)
             } as IRequestModel);
             this.params().formIndex(0);
             this.params().isInEditMode(false);
@@ -93,3 +94,4 @@ ko.components.register("top-section", new TopSectionComponent());
 ko.components.register("second-section", new SecondSectionComponent());
 ko.components.register("third-section", new ThirdSectionComponent());
 ko.components.register("navigation-menu", new NavigationMenuComponent());
+ko.components.register("scope-of-work", new ScopeOfWorkComponent());

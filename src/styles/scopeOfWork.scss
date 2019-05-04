@@ -1,0 +1,212 @@
+$background-color-lightyellow: lightyellow;
+$active-color: red;
+$inactive-color: lightgray;
+//$element-min-width: 33%;
+
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.scope-progress-bar {
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background: $background-color-lightyellow;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.scope-progress-bar-top {
+  width: 100%;
+  background: lightgreen;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scope-progress-bar-main {
+  background: lightcyan;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 30px;
+}
+
+.step {
+  flex: 1 1 0;
+  width: 0;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-main {
+  //background-color: lightyellow;
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.step-main:before,
+.step-main:after {
+  content: "";
+  top: calc(50% - 2px);
+  z-index: 1;
+  border: 3px solid $inactive-color;
+  position: absolute;
+  //-webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+  //transition: width 2s, height 4s;
+}
+
+.step-main.active:before {
+  content: "";
+  top: calc(50% - 2px);
+  z-index: 2;
+  border: 3px solid $active-color;
+  position: absolute;
+  //-webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+  //transition: width 2s, height 4s;
+}
+
+.step-main:before {
+  left: -1px;
+  right: 50%;
+}
+
+.step-main:after {
+  left: 50%;
+  right: -1px;
+}
+
+.step-main.active:before {
+  left: -1px;
+  right: 50%;
+}
+
+.step-main.first-type:before {
+  border: none !important;
+}
+
+.step-main.last-type:after {
+  border: none !important;
+}
+
+.step-main.active.first:before {
+  border: 3px solid $inactive-color;
+}
+
+.step-main.active.last:after {
+  border: 3px solid $inactive-color;
+}
+
+.step-main.first-type:after {
+  border: 3px solid $inactive-color;
+}
+
+.step-main.active:after {
+  content: "";
+  top: calc(50% - 2px);
+  z-index: 2;
+  border: 3px solid $active-color;
+  position: absolute;
+  left: 50%;
+  right: -1px;
+}
+
+.step-main.active.only:before,
+.step-main.active.only:after {
+  border: 3px solid $inactive-color;
+}
+
+.step-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  color: $inactive-color;
+  font-size: 1.5rem;
+}
+
+.step-icon {
+  background: $background-color-lightyellow;
+}
+
+.step-main.active {
+  .step-icon {
+    background: $background-color-lightyellow;
+    color: $active-color;
+  }
+}
+
+.top-icon {
+  flex: 1 1 0;
+  width: 0;
+  font-size: 2.5rem;
+  margin-bottom: 0.25rem;
+  color: $inactive-color;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+
+  .active {
+    color: $active-color;
+  }
+}
+
+.top-icon.active {
+  color: $active-color;
+}
+
+.secondary-step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.secondary-step-icon {
+  color: $inactive-color;
+  font-size: 1rem;
+}
+
+.secondary-step-icon.active {
+  color: $active-color;
+}
+
+.secondary-step-top {
+  display: flex;
+  position: absolute;
+  top: -280%;
+  font-size: 2rem;
+  color: $inactive-color;
+
+  .active {
+    color: $active-color;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .step {
+    min-width: 50%;
+    flex: unset;
+  }
+
+  .top-icon {
+    min-width: 50%;
+    flex: unset;
+  }
+}

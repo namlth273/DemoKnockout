@@ -1,0 +1,32 @@
+<div class="progress-container">
+    <div class="scope-progress-bar">
+        <div class="scope-progress-bar-top" data-bind="foreach: { data: items, as: 'item' }">
+            <div class="top-icon">
+                <i class="fa fa-home" data-bind="css: { active: isActive }"></i>
+            </div>
+            <div class="top-icon-secondary invisible" data-bind="css: { 'd-none': isLastOfType }">
+                <i class="fa fa-circle" data-bind="css: { active: isActive }"></i>
+            </div>
+        </div>
+        <div class="scope-progress-bar-main" data-bind="foreach: { data: items, as: 'item' }">
+            <div class="step">
+                <div class="step-main" role="button" data-bind="attr: { id: item.name },
+                        click: $parent.stepClick.bind($parent, item),
+                        css: { 'first-type': isFirstOfType, 'last-type': isLastOfType,
+                        'active': isActive, 'first': isFirstActive, 'last': isLastActive, 'only': isOnly }
+                        ">
+                    <i class="step-icon fa"
+                        data-bind="css: { 'fa-square': !item.isActive(), 'fa-check-square': item.isActive() }"></i>
+                </div>
+                <label>some textaaa aaa aaa aaa aaaaa aaaa aaa</label>
+            </div>
+            <div class="secondary-step">
+                <div class="secondary-step-top" data-bind="css: { 'd-none': isLastOfType }">
+                    <i class="fa fa-plane" data-bind="css: { 'active': isActive() && !isLastActive() }"></i>
+                </div>
+                <i class="secondary-step-icon fa fa-circle"
+                    data-bind="css: { 'active': isActive() && !isLastActive(), 'd-none': isLastOfType }"></i>
+            </div>
+        </div>
+    </div>
+</div>

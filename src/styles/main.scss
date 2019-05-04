@@ -2,49 +2,50 @@
 @import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
 
 .main-circle {
+  width: 1.2rem;
+  height: 1.2rem;
+  display: inline-block;
+  position: relative;
+
+  &:before {
+    content: "";
     width: 1.2rem;
     height: 1.2rem;
-    display: inline-block;
-    position: relative;
+    border: 1px solid dimgray;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
 
-    &:before {
-        content: "";
-        width: 1.2rem;
-        height: 1.2rem;
-        border: 1px solid dimgray;
-        border-radius: 50%;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        top: 50%;
-        left: 50%;
-    }
-
-    &:after {
-        content: "";
-        width: 0.8rem;
-        height: 0.8rem;
-        border: 1px solid dimgray;
-        background: lightblue;
-        border-radius: 50%;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        top: 50%;
-        left: 50%;
-    }
+  &:after {
+    content: "";
+    width: 0.8rem;
+    height: 0.8rem;
+    border: 1px solid dimgray;
+    background: lightblue;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
 }
 
 .btn-edit {
-    cursor: pointer;
-    color: lightgreen;
-    transition: all 0.5s ease-out;
+  cursor: pointer;
+  color: lightgreen;
+  transition: all 0.5s ease-out;
 
-    &:hover {
-        font-size: 2rem;
-    }
+  &:hover {
+    font-size: 2rem;
+  }
 }
+
 @include media-breakpoint-down(md) {
-    .main-circle:hover {
-        border: 2px solid lightcoral;
-        border-radius: 50%;
-    }
+  .main-circle:hover {
+    border: 2px solid lightcoral;
+    border-radius: 50%;
+  }
 }
