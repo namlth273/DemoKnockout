@@ -43,6 +43,34 @@
   }
 }
 
+.popover--mod {
+  .popover-body {
+    background: #6c757d;
+    color: white;
+  }
+}
+
+.popover--mod.bs-popover-left {
+  .arrow:after {
+    border-left-color: #6c757d !important;
+  }
+}
+.popover--mod.bs-popover-right {
+  .arrow:after {
+    border-right-color: #6c757d !important;
+  }
+}
+.popover--mod.bs-popover-top {
+  .arrow:after {
+    border-top-color: #6c757d !important;
+  }
+}
+.popover--mod.bs-popover-bottom {
+  .arrow:after {
+    border-bottom-color: #6c757d !important;
+  }
+}
+
 @include media-breakpoint-down(md) {
   .main-circle:hover {
     border: 2px solid lightcoral;

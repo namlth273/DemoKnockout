@@ -1,17 +1,24 @@
 <div class="card">
     <div class="card-body">
         <button class="btn btn-primary" data-bind="popover: { 
-            options: { title: 'Popover with template', trigger: 'hover' }, 
+            options: { trigger: 'hover' }, 
             template: templateId
         }">Click</button>
         <button class="btn btn-primary" data-bind="popover: { 
             options: { title: 'Popover with template 2' }, 
             template: templateId
         }">Click</button>
-        <a data-bind="tooltip: { title: 'Tooltip example' }">consectetur</a>
 
         <template data-bind="attr: { id: templateId }">
-            <h2>Content aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h2>
+            <span>Base HTML to use when creating the popover.
+
+                The popover's title will be injected into the .popover-header.
+                
+                The popover's content will be injected into the .popover-body.
+                
+                .arrow will become the popover's arrow.
+                
+                The outermost wrapper element should have the .popover class.</span>
         </template>
     </div>
 </div>

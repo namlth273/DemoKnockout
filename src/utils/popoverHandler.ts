@@ -84,6 +84,7 @@ ko.bindingHandlers.popover = {
             options.html = true;
             options.sanitize = false;
             options.placement = "auto";
+            options.template = '<div class="popover popover--mod" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>';
         }
 
         var popoverData = $element.data('bs.popover');
