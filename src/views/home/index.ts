@@ -4,6 +4,7 @@ import { ThirdSectionComponent } from "./_/ThirdSection";
 import { ScopeOfWorkComponent } from "./_/ScopeOfWork";
 import { NavigationMenuComponent } from "./_/NavigationMenu";
 import { IRequestModel, IBaseParam } from "@/models/models";
+import { KnockStrapComponent } from "./_/KnockStrapSection";
 import { EnumFormId } from "@/utils";
 
 class HomeViewModel {
@@ -95,3 +96,4 @@ ko.components.register("second-section", new SecondSectionComponent());
 ko.components.register("third-section", new ThirdSectionComponent());
 ko.components.register("navigation-menu", new NavigationMenuComponent());
 ko.components.register("scope-of-work", new ScopeOfWorkComponent());
+ko.components.register("knock-strap", new KnockStrapComponent());

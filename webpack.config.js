@@ -95,7 +95,8 @@ module.exports = env => {
       new webpack.HotModuleReplacementPlugin(),
       new webpack.ProvidePlugin({
         _: 'lodash',
-        ko: 'exports-loader?!knockout'
+        ko: 'exports-loader?!knockout',
+        $: 'jquery'
       })
     ]
   }

@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-body">
+        <button class="btn btn-primary" data-bind="popover: { 
+            options: { title: 'Popover with template' }, 
+            template: templateId
+        }">Click</button>
+        <a data-bind="tooltip: { title: 'Tooltip example' }">consectetur</a>
+
+        <template data-bind="attr: { id: templateId }">
+            <h2>Content aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h2>
+        </template>
+    </div>
+</div>
