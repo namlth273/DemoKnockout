@@ -58,6 +58,7 @@ module.exports = env => {
                 resources: [
                   path.resolve(__dirname, 'src/styles/_variables.scss'),
                   path.resolve(__dirname, 'node_modules/@fortawesome/fontawesome-free/scss/solid.scss'),
+                  path.resolve(__dirname, 'node_modules/@fortawesome/fontawesome-free/scss/regular.scss'),
                   path.resolve(__dirname, 'node_modules/bootstrap/scss/_functions.scss'),
                   path.resolve(__dirname, 'node_modules/bootstrap/scss/_variables.scss'),
                   path.resolve(__dirname, 'node_modules/bootstrap/scss/_mixins.scss')

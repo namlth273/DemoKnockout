@@ -1,4 +1,8 @@
 <div class="card mt-3" data-bind="visible: isComponentVisible">
+    <div class="d-flex m-2">
+        <checkbox-option params="checkBoxText: 'Import', isChecked: ko.observable(true)"></checkbox-option>
+        <checkbox-option params="checkBoxText: 'Export', isChecked: ko.observable(false)"></checkbox-option>
+    </div>
     <knock-strap></knock-strap>
     <scope-of-work></scope-of-work>
     <div class="card-body">

@@ -1,0 +1,6 @@
+<div class="d-flex align-items-center checkbox-option-container" data-bind="click: click">
+    <i class="far checkbox-option" data-bind="css: { 'fa-square': !params.isChecked(), 'fa-check-square': params.isChecked }"></i>
+    <!-- ko if: params.checkBoxText -->
+    <span data-bind="text: params.checkBoxText" class="checkbox-option-text"></span>
+    <!-- /ko -->
+</div>
